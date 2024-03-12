@@ -54,6 +54,21 @@ jobs:
         run: |
           make format || true
           make test
+  test-linux-s390x:
+    runs-on: linux-s390x
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+      - name: Setup go
+        uses: actions/setup-go@v5
+        with:
+          check-latest: true
+          go-version-file: 'go.mod'
+      - name: Test
+        run: |
+          make format || true
+          make test
   test-windows:
     runs-on: windows-2019
     steps:
