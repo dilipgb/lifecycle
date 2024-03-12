@@ -124,6 +124,7 @@ jobs:
     needs:
       - test-linux-amd64
       - test-linux-arm64
+      - test-linux-s390x
       - test-windows
     runs-on: ubuntu-latest
     permissions:
