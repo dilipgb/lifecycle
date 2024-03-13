@@ -22,14 +22,14 @@ jobs:
         with:
           check-latest: true
           go-version-file: 'go.mod'
+      - name: Install docker
+        run: curl -sSL https://get.docker.com/ | sh
       - name: Install jq
         run: |
           mkdir -p deps/bin
           curl -s -L -o deps/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
           chmod +x deps/bin/jq
           echo "${PWD}/deps/bin" >> $GITHUB_PATH
-      - name: Install docker
-        run: curl -sSL https://get.docker.com/ | sh
       - name: Test
         env:
           TEST_COVERAGE: 1
