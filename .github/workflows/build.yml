@@ -22,6 +22,8 @@ jobs:
         with:
           check-latest: true
           go-version-file: 'go.mod'
+      - uses: docker-practice/actions-setup-docker@master
+        timeout-minutes: 12
       - name: Install jq
         run: |
           mkdir -p deps/bin
