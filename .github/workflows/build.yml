@@ -74,7 +74,7 @@ jobs:
       - name: Install jq
         run: |
           mkdir -p deps/bin
-          curl -s -L -o deps/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+          curl -s -L -o deps/bin/jq https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-linux-s390x
           chmod +x deps/bin/jq
           echo "${PWD}/deps/bin" >> $GITHUB_PATH
       - name: Test
