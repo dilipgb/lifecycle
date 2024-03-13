@@ -29,8 +29,7 @@ jobs:
           chmod +x deps/bin/jq
           echo "${PWD}/deps/bin" >> $GITHUB_PATH
       - name: Install docker
-        run: |
-          curl -sSL https://get.docker.com/ | sh
+        run: curl -sSL https://get.docker.com/ | sh
       - name: Test
         env:
           TEST_COVERAGE: 1
