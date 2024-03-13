@@ -28,7 +28,6 @@ jobs:
           curl -s -L -o deps/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
           chmod +x deps/bin/jq
           echo "${PWD}/deps/bin" >> $GITHUB_PATH
-          curl -s -L -S https://get.docker.com/ | sh
       - name: Test
         env:
           TEST_COVERAGE: 1
