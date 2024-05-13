@@ -36,7 +36,7 @@ jobs:
           #Reserving a floating ip to the ZVSI
           ibmcloud is floating-ip-reserve $ZVSI_FP_NAME --zone $ZVSI_ZONE_NAME --resource-group-id ${{ secrets.ZVSI_RG_ID }} --in $ZVSI_INSTANCE_NAME
           #Bouding the Floating ip to the ZVSI
-          ibmcloud is floating-ip-update $ZVSI_FP_NAME --nic primary --in $ZVSI_INSTANCE_NAME
+          ibmcloud is floating-ip-update $ZVSI_FP_NAME --nic eth0 --in $ZVSI_INSTANCE_NAME
           sleep 60
           #Saving the Floating IP to login ZVSI
           ZVSI_HOST=$(ibmcloud is floating-ip $ZVSI_FP_NAME | awk '/Address/{print $2}')
